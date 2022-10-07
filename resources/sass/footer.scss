@@ -1,0 +1,37 @@
+footer {
+  padding-top: 3rem;
+  background-image: url('../img/bg-footer.jpg');
+
+  .cols {
+      display: flex;
+      margin-bottom: 3rem;
+
+      .logo,
+      .footer-links {
+          flex-basis: calc(100% / 3);
+          padding: 0 1rem;
+      }
+
+      h4 {
+          text-transform: uppercase;
+          font-size: 1.25em;
+          font-weight: 600;
+          margin-bottom: 1rem;
+      }
+
+      ul {
+          list-style: none;
+
+          li a {
+              display: inline-block;
+              margin-bottom: 0.25rem;
+              text-decoration: none;
+              font-size: 0.875em;
+
+              &:hover {
+                  color: $primary;
+              }
+          }
+      }
+  }
+}

@@ -1,0 +1,41 @@
+@import './partials/vars';
+@import './partials/mixins';
+@import './partials/utilities';
+@import './partials/generals';
+
+
+@import './header';
+@import './footer';
+
+
+.products {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-image: url("../img/bg-prods.jpg");
+
+  h1 {
+      font-weight: 600;
+  }
+
+  .boxes {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+  }
+}
+
+
+.prod-card {
+  flex-basis: 25%;
+  padding: 20px;
+  background-color: white;
+  border: 2px solid lighten($primary, 70%);
+
+  h3 {
+      color: $primary;
+  }
+
+  img {
+      display: block;
+  }
+}
