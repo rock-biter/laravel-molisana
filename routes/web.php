@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/prodotti', function () {
     $data = [
@@ -23,9 +23,28 @@ Route::get('/prodotti', function () {
         'app_name' => config('app.name')
     ];
 
-    return view('products', $data);
-});
+    return view('products.index', $data);
+})->name('prodotti');
+
+Route::get('/prodotti/{id}', function ($id) {
+
+    $paste = config('paste');
+    if ($id < count($paste)) {
+        $pastaBellissima = $paste[$id];
+        $data = [
+            'pasta' => $pastaBellissima
+        ];
+
+        return view('products.show', $data);
+    } else {
+        abort(404);
+    }
+})->where('id', '[0-9]+')->name('prodotto');
+
+Route::get('/prodotti/sostenibilita', function () {
+    return 'pagina prodotti/sostenibilita';
+})->name('sostenibilita');
 
 Route::get('/contatti', function () {
     return view('contact');
-});
+})->name('contatti');
